@@ -17,7 +17,17 @@ def main():
     # Call your drawing functions such
     # as draw_sky and draw_ground here.
 
+    # draw_line(canvas, 10, 10, 200, 200, width=10)
+    for i in range(0, 200, 10):
+        draw_line(canvas, 10, 10, i, 200 - i)
 
+    # x = 100
+    # y = 200
+    # width = 100
+
+    # draw_line(canvas, x, y, x, y + width)
+    # draw_line(canvas, x, y, x + width, y + width)
+    # draw_line(canvas, x, y, x, y + width)
 
     # Call the finish_drawing function
     # in the draw2d.py library.
@@ -26,7 +36,15 @@ def main():
 
 # Define your functions such as
 # draw_sky and draw_ground here.
+def draw_something(canvas, x, y, width):
+    
+    x = 100
+    y = 200
+    width = 100
 
+    draw_line(canvas, x, y, x, y + width)
+    draw_line(canvas, x, y, x + width, y + width)
+    draw_line(canvas, x, y, x, y + width)
 
 
 # Call the main function so that
