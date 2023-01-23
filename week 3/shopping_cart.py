@@ -3,6 +3,9 @@
 def load():
     pass
 
+def display_menu():
+    pass
+
 def save():
     pass
 
