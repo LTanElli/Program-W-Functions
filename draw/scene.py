@@ -18,7 +18,7 @@ from draw2d import \
 def main():
      # Width and height of the scene in pixels
     scene_width = 800
-    scene_height = 500
+    scene_height = 600
 
     # Call the start_drawing function in the draw2d.py
     # library which will open a window and create a canvas.
@@ -28,6 +28,10 @@ def main():
     # as draw_sky and draw_ground here.
     draw_night_sky(canvas, scene_width, scene_height)
     draw_ground(canvas, scene_width, scene_height)
+    draw_clouds(canvas, 100, 500, 80)
+    draw_clouds(canvas, 350, 450, 75)
+    draw_clouds(canvas, 600, 500, 75)
+    draw_cactus(canvas, 250, 350)
 
     # Call the finish_drawing function
     # in the draw2d.py library.
@@ -37,23 +41,36 @@ def main():
 # Define your functions such as
 # draw_sky and draw_ground here.
 
+def draw_cactus(canvas, x, y):
+    cactus_left = x - 15
+    cactus_right = x + 15
+    cactus_bottom = y - 200
+    draw_rectangle(canvas, , fill = "darkGreen")
+    
 
+def draw_clouds(canvas, x, y, diam):
 
-# Call the main function so that
-# this program will start executing.
+    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white")
+    x = x + 50
+    y = y - 10
+    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white")
+    x = x - 50
+    y = y - 15
+    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white")
+    
 
 def draw_night_sky(canvas, scene_width, scene_height):
     draw_rectangle(canvas, 0, scene_height / 4, scene_width, scene_height, width=0, fill="gray3")
 
     half_height = round(scene_height / 1)
     min_diam = 10
-    max_diam = 25
+    max_diam = 20
 
-    for i in range(28):
+    for i in range(30):
         x = random.randint(0, scene_width - max_diam)
         y = random.randint(0, half_height)
         diameter = random.randint(min_diam, max_diam)
-        draw_oval(canvas, x, y, x + diameter, y + diameter, fill="lightYellow3")
+        draw_oval(canvas, x, y, x + diameter, y + diameter, fill="gold")
     
 def draw_ground(canvas, scene_width, scene_height):
     draw_rectangle(canvas, 0, 0, scene_width, scene_height / 4, width=0, fill="tan4")
@@ -68,11 +85,7 @@ def draw_ground(canvas, scene_width, scene_height):
         diameter = random.randint(min_diam, max_diam)
         draw_oval(canvas, x, y, x + diameter, y + diameter, fill="saddleBrown")
 
-#for the final part id like to add the moon and a cactus
-# def draw_cactus(canvas, center_x, bottom, height):
-#     cactus_width = height / 3
-#     cactus_height = height / 7
-#     left = center_x - c
-    
+# Call the main function so that
+# this program will start executing.
 
 main()
