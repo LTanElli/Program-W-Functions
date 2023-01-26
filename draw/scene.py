@@ -31,7 +31,9 @@ def main():
     draw_clouds(canvas, 100, 500, 80)
     draw_clouds(canvas, 350, 450, 75)
     draw_clouds(canvas, 600, 500, 75)
-    draw_cactus(canvas, 250, 350)
+    draw_cactus(canvas, 200, 50, 250, 300)
+    draw_cactus(canvas, 350, 70, 400, 320)
+    draw_cactus(canvas, 650, 30, 700, 280)
 
     # Call the finish_drawing function
     # in the draw2d.py library.
@@ -41,22 +43,19 @@ def main():
 # Define your functions such as
 # draw_sky and draw_ground here.
 
-def draw_cactus(canvas, x, y):
-    cactus_left = x - 15
-    cactus_right = x + 15
-    cactus_bottom = y - 200
-    draw_rectangle(canvas, , fill = "darkGreen")
+def draw_cactus(canvas, x0, y0, x1, y1):
+    draw_rectangle(canvas, x0, y0, x1, y1, fill = "green")
     
 
 def draw_clouds(canvas, x, y, diam):
 
-    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white")
+    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white", outline = "white")
     x = x + 50
     y = y - 10
-    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white")
+    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white", outline = "white")
     x = x - 50
     y = y - 15
-    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white")
+    draw_oval(canvas, x, y, x + diam, y + diam, fill = "white", outline = "white")
     
 
 def draw_night_sky(canvas, scene_width, scene_height):
