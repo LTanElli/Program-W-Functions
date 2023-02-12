@@ -10,7 +10,7 @@ def main():
     # I thought the above would work. Didn't, not sure why.
     for quantity in range(2):
         for tense in tenses:
-            print(f"{get_determiner(quantity).capitalize()} {get_noun(quantity)} {get_verb(quantity, tense)} {get_prepositional_phrase(quantity)}.")
+            print(f"{get_determiner(quantity).capitalize()} {get_noun(quantity).capitalize()} {get_verb(quantity, tense)} {get_prepositional_phrase(quantity)}.")
 
 
 
@@ -149,7 +149,15 @@ def get_prepositional_phrase(quantity):
             be single or pluaral.
     Return: a prepositional phrase.
     """
-    prepostional_phrase = get_prepostion() + " " + get_determiner(quantity) + " " + get_noun(quantity)
+    # prepositions = ["about", "above", "across", "after", "along",
+    #     "around", "at", "before", "behind", "below",
+    #     "beyond", "by", "despite", "except", "for",
+    #     "from", "in", "into", "near", "of",
+    #     "off", "on", "onto", "out", "over",
+    #     "past", "to", "under", "with", "without"]
+    #not sure if this is needed here
+
+    prepositional_phrase = (f"{get_preposition()} {get_determiner(quantity)} {get_noun(quantity).capitalize()}")
     return prepositional_phrase
 
 
