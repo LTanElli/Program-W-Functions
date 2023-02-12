@@ -10,7 +10,7 @@ def main():
     # I thought the above would work. Didn't, not sure why.
     for quantity in range(2):
         for tense in tenses:
-            print(f"{get_determiner(quantity).capitalize()} {get_noun(quantity).capitalize()} {get_verb(quantity, tense)} {get_prepositional_phrase(quantity)}.")
+            print(f"{get_determiner(quantity).capitalize()} {get_adjective()} {get_noun(quantity).capitalize()} {get_verb(quantity, tense)} {get_prepositional_phrase(quantity)}.")
 
 
 
@@ -38,7 +38,11 @@ def get_determiner(quantity):
     word = random.choice(words)
     return word
 
+def get_adjective():
+    adjectives = ["fat", "skinny", "tall", "tiny", "quick", "slow"]
 
+    adjective = random.choice(adjectives)
+    return adjective
 
 def get_noun(quantity):
     """Return a randomly chosen noun.

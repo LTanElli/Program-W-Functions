@@ -1,4 +1,4 @@
-from prove5 import get_determiner, get_noun, get_verb, get_preposition, get_prepositional_phrase
+from prove5 import get_determiner, get_noun, get_verb, get_preposition, get_prepositional_phrase, get_adjective
 import pytest
 
 
@@ -7,6 +7,17 @@ def main():
     test_get_determiner()
     test_get_noun()
     test_get_verb()
+    test_get_preposition()
+    test_get_prepositional_phrase()
+    test_get_adjective()
+
+def test_get_adjective():
+    adjectives = ["fat", "skinny", "tall", "tiny", "quick", "slow"]
+
+    for _ in range(12):
+        adjective = get_adjective()
+        assert adjective in adjectives
+    
 
 def test_get_determiner():
     # 1. Test the single determiners.
