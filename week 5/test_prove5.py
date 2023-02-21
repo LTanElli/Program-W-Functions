@@ -1,4 +1,4 @@
-from prove5 import get_determiner, get_noun, get_verb
+from prove5 import get_determiner, get_noun, get_verb, get_preposition, get_prepositional_phrase, get_adjective
 import pytest
 
 
@@ -7,6 +7,17 @@ def main():
     test_get_determiner()
     test_get_noun()
     test_get_verb()
+    test_get_preposition()
+    test_get_prepositional_phrase()
+    test_get_adjective()
+
+def test_get_adjective():
+    adjectives = ["fat", "skinny", "tall", "tiny", "quick", "slow"]
+
+    for _ in range(12):
+        adjective = get_adjective()
+        assert adjective in adjectives
+    
 
 def test_get_determiner():
     # 1. Test the single determiners.
@@ -90,6 +101,47 @@ def test_get_verb():
     for _ in range(10):
         word = get_verb(1, "future")
         assert word in future_verbs
+
+def test_get_preposition():
+    prepositions = ["about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"]
+    for _ in range(12):
+        preposition = get_preposition()
+    assert preposition in prepositions
+
+def test_get_prepositional_phrase():
+    #singular
+    prepositions = ["about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"]
+    single_nouns = ["bird", "boy", "car", "cat", "child",
+        "dog", "girl", "man", "rabbit", "woman"]
+    single_determiners = ["a", "one", "the"]
+
+    for _ in range(80):
+        prepositional_phrase = get_prepositional_phrase(1)
+        preposition, single_determiner, single_noun = prepositional_phrase
+        assert preposition in prepositions
+        assert single_determiner in single_determiners
+        assert single_noun in single_nouns
+
+    #plural
+    plural_nouns = ["birds", "boys", "cars", "cats", "children",
+        "dogs", "girls", "men", "rabbits", "women"]
+    plural_determiners = ["some", "many", "the"]
+    for _ in range(30):
+        prepositional_phrase = get_prepositional_phrase(2)
+        preposition, plural_determiner, plural_noun = prepositional_phrase
+        assert preposition in prepositions
+        assert plural_determiner in plural_determiners
+        assert plural_noun in plural_nouns
 
 
 pytest.main(["-v", "--tb=line", "-rN", __file__])
