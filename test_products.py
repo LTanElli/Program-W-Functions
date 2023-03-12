@@ -1,13 +1,13 @@
 # Copyright 2020, Brigham Young University-Idaho. All rights reserved.
 
-from receipt import read_dictionary
+from receipt import get_products
 from os import path
 from tempfile import mktemp
 from pytest import approx
 import pytest
 
 
-def test_read_dictionary():
+def test_get_products():
     """Verify that the read_dictionary function works correctly.
     Parameters: none
     Return: nothing
@@ -22,13 +22,13 @@ def test_read_dictionary():
     #    function raises a FileNotFoundError.
     filename = mktemp(dir=".", prefix="not", suffix=".csv")
     with pytest.raises(FileNotFoundError):
-        read_dictionary(filename, PRODUCT_NUM_INDEX)
+        get_products(filename, PRODUCT_NUM_INDEX)
         pytest.fail("read_dictionary function must use its filename parameter")
 
     # Call the read_dictionary function and store the returned
     # dictionary in a variable named products_dict.
     filename = path.join(path.dirname(__file__), "products.csv")
-    products_dict = read_dictionary(filename, PRODUCT_NUM_INDEX)
+    products_dict = get_products(filename, PRODUCT_NUM_INDEX)
 
     # Verify that the read_dictionary function returns a dictionary.
     assert isinstance(products_dict, dict), \
