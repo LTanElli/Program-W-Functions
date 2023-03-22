@@ -1,0 +1,60 @@
+CSE 111 Proposal for a Student Chosen Program
+
+    (This is a proposal. All proposals are written with our best
+    knowledge at the beginning of a project. As we progress from the
+    beginning to the end of a project, we gain more knowledge, and we
+    change some of our proposed ideas. This is part of completing any
+    project and is fine.  However, we still must write a proposal so
+    that our teachers or supervisors know what we intend to do. Please
+    answer each of the following questions to the best of your
+    knowledge.)
+
+    **(I am not sure that my initial proposal will be accepted, as the criteria for this project is to create a program that will solve a real world problem. However, I think that this program will accomplish that because it is a program that will solve a problem that comes when creating a game.)
+
+    **(That said, if this initial proposal does not get accepted I will be prepared with a second proposal. And if neither are attainable then I will choose an idea from the list provided in the milestone.)
+
+1. What is the title of your program?
+    character_customization.py 
+    or
+    random_character.py
+
+2. What real-world problem will your program address or help to solve?
+    It will present code that will customize a character for a game from user inputs.
+
+    this, or, 
+
+    A program that will present a 
+
+3. What will you learn from developing this program?
+    I will learn how to better bring together what I have learned in this class, as well as creating and using functions to accomplish a task of my own idea that I set out to complete myself. I will also learn about what some of the code logic of what makes a game. 
+
+4. What Python modules will your program use?
+    csv, datetime, pytest, import, time, functools, math.
+
+    (Some examples are: csv, datetime, functools, matplotlib, math,
+    pandas, pytest, random, requests, and tkinter.)
+
+5. Will you separate your Python program into functions that each
+perform a single task?
+    I am leaning towards my second option, which will be a random character generator for a DND character. Each function will create a different aspect of the character. This idea will not rely on user inputs, and will solve a problem for people who want a new kind of DND character.
+
+    Writing this proposal only took about an hour as I considered which idea would make for a better learning experience. The rest of my time spent on this weeks part of the project was spent writing an outline of what my functions will be.
+
+    In doing so, I spent a long time reading and looking into what the most important aspects of a DND character are. Specifically, what are the main components of a character for DND that one would want to have created at random for fun, while still leaving some info for the players creation to take this outline created by the program and put their own twist and identity on said character. My main source of material is the Dungeon and Dragons 5th Edition. It's hard to know if I spent exactly three hours total or more on this weeks project, but it definitely feels like I spent more than that.
+    
+
+    (Remember that the most reusable functions don't get user input and
+    don't print results but instead have parameters and return a result.
+    Functions that get user input and print results are important and do
+    useful work but are not easily reusable.)
+
+    (Remember also that it's hard to test functions that get user input
+    and print results. It's easy to test functions that don't get user
+    input and don't print results but instead have parameters and return
+    a result. Therefore, you should write most of your program functions
+    to have parameters and return a result.)
+
+6. Will you write test functions to test at least two of your program
+functions?
+    Yes, I am not confident in writing test functions yet but with an idea that does not rely on user inputs I believe I will be able to complete it.
+

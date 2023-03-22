@@ -44,13 +44,13 @@ def main():
 
 
 
-def get_products(file, key_column_index): #This is my "read dictionary" function from the milestone. I renamed it.
+def get_products(file, key_index_): #This is my "read dictionary" function from the milestone. I renamed it.
     with open(file, "rt") as products:
         reader = csv.reader(products)
         next(reader)
 
         for line in reader:
-            key = line[key_column_index]
+            key = line[key_index_]
             products_list[key] = line
             products_list[key].pop(0)
 
